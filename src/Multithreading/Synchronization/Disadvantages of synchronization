@@ -1,0 +1,10 @@
+1. Fairness → synchronized does not guarantee fairness, so thread starvation can occur.
+          ~  We can overcome it by using fairness lock
+
+2. Blocking → A thread cannot try the lock with a timeout; it may remain blocked until the lock is released.
+         ~  We can overcome it by using try lock or try lock with time
+
+3. Interruptibility → A thread waiting to enter a synchronized block/method cannot be interrupted using interrupt().
+         ~ We can overcome it by using interuptible method
+
+4. Read/Write Locking → synchronized does not provide separate read/write locks, so multiple readers cannot access the resource concurrently.

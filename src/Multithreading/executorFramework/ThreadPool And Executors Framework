@@ -1,0 +1,56 @@
+THREAD POOL : A Thread Pool is a collection of pre-created and reusable worker threads that execute multiple tasks.
+              Instead of creating a new thread for every task, the same threads are reused to execute different tasks.
+
+Advantages of Thread Pool
+             ~  Thread Reusability
+             ~  Reduces Thread Creation Overhead
+             ~  Better Resource Management
+             ~  Improves Performance
+             ~  Task Management : Tasks can be submitted to the pool and are executed by available worker threads.
+             ~  Controls Concurrency : We can control how many tasks execute simultaneously by controlling the number of worker threads.
+
+Executors Framework in Java : The Executors framework was introduced in Java 5 as part of the java.util.concurrent
+              package to simplify the development of concurrent applications by abstracting away many of the complexities involved in creating and managing threads.
+
+Problem which was coming Prior to Executors Framework
+             ~  Manual Thread Management
+             ~  Resource Management is tough
+             ~  Scalability
+             ~  Thread Reuse
+             ~  Error Handling
+
+                             Executors   Framework[cite: 2]
+                               /    \               \
+                              /      \               \
+                             v        v               v
+                        Executor   ExecutorService  ScheduledExecutorService[cite: 2]
+
+                        Executor Framework — Quick Revision
+
+                        Executor (Interface)
+                                ↓ extends
+                        ExecutorService (Interface)
+                                ↓ implements
+                        AbstractExecutorService (Abstract Class)
+                                ↓ extends
+                        ThreadPoolExecutor (Class)
+                        Executor → execute()
+                        ExecutorService → submit(), shutdown(), shutdownNow(), awaitTermination()
+                        AbstractExecutorService → common implementation of submit(), invokeAll(), invokeAny()
+                        ThreadPoolExecutor → actual worker threads + task queue + thread management
+                        Executors → utility class; creates executors using newFixedThreadPool(), newCachedThreadPool(), etc.
+                        Runnable → run() → no result
+                        Callable → call() → returns result
+                        Future → represents the result; get(), cancel(), isDone()
+
+             DIFFERENCE BETWEEN RUNNABLE AND CALLABLE
+ RUNNABLE vs CALLABLE
+
+ ┌────────────────────┬──────────────────────────────┬────────────────────────────────┐
+ │ Basis              │ Runnable                     │ Callable                       │
+ ├────────────────────┼──────────────────────────────┼────────────────────────────────┤
+ │ 1. Return Type     │ void                         │ Returns value of type V        │
+ │ 2. Method          │ run()                        │ call()                         │
+ │ 3. Exception       │ Cannot declare checked       │ Can declare checked            │
+ │    Handling        │ exceptions directly          │ exceptions using throws        │
+ └────────────────────┴──────────────────────────────┴────────────────────────────────┘

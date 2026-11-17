@@ -1,0 +1,56 @@
+*  The final keyword is used when you want something to not be changed further.
+*  It can be used with variables, methods, and classes.
+*  Final Variable
+         A final variable's value cannot be changed once assigned.
+*  Final Method
+         A final method cannot be overridden by a child class.
+*   Final Class
+         A final class cannot be inherited/extended.
+*  final is used to restrict modification, overriding, or inheritance in Java.
+
+*  1. final variable → Fixed value
+
+   Real-life example: PI
+
+   class MathConstants {
+       final double PI = 3.14159;
+   }
+
+   Once PI is assigned, you don't want someone to change it:
+   PI = 4.5;  // ❌
+
+*  2. final method → Don't allow child classes to change the behavior
+
+   Imagine a banking system:
+
+   class BankAccount {
+
+       final void calculateInterest() {
+           // standard bank calculation
+       }
+   }
+
+   If another class extends BankAccount, it cannot override the calculation:
+
+   class SavingsAccount extends BankAccount {
+
+       void calculateInterest() {   // ❌
+       }
+   }
+
+   This is useful when a particular piece of logic must remain unchanged by subclasses.
+
+*   3. final class → Don't allow inheritance
+
+    Imagine a security-related utility class:
+
+    final class SecurityUtil {
+        // security logic
+    }
+
+    Someone cannot create a subclass:
+
+    class MySecurityUtil extends SecurityUtil {  // ❌
+    }
+
+    This can be useful when you don't want anyone to modify/extend the behavior through inheritance.

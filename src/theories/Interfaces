@@ -1,0 +1,40 @@
+*   Class is a blueprint for making an object.
+*   Similarly Interfaces are blue prints for making a class.
+*   An interface is a contract that specifies what a class must do, while the implementing class provides the actual implementation.
+*   Interfaces can only have abstract methods and static constants.
+*   A static constant is a value that is:
+             static → shared by the whole class
+             final → cannot be changed after initialization
+             Syntax : static final + datatype + variable;
+
+                     class Circle {
+                         static final double PI = 3.14159;
+                     }
+             static → only one shared copy of PI
+             final → PI's value cannot be changed
+             You can access it directly using the class:
+                     System.out.println(Circle.PI);
+
+*   There are two main uses of Interfaces - To achieve multiple inheritance and achieve pure abstraction
+*   Another classes implements interfaces
+*   NOTE IMP - From JAVA 8 onwards Interfaces can have default and static methods as well.
+*   In an interface, if you declare a method without default, static, or private, it is implicitly public abstract.
+*   We can directly access Static method of any interface by using the interface name.
+*   We can not directly use static methods of an interface using child class name
+            Because interface static methods belong only to the interface itself and are not inherited by implementing classes.
+
+*   Interface static methods are not inherited by implementing classes, but interface constants (public static final fields) are inherited and can be accessed using the implementing class name.
+
+*   Default Method in Interface — Notes
+    A default method is a method in an interface that has a method body/implementation.
+    It is declared using the default keyword.
+    It was introduced in Java 8.
+    A default method is inherited by implementing classes.
+    An implementing class does not have to override a default method.
+    But the implementing class can override it if it needs different behavior.
+    Default methods are instance methods, not static methods.
+    They are called using an object of the implementing class.
+    Main purpose: to provide common/default behavior to all implementing classes without forcing them to implement the method.
+
+*   Interfaces and abstract can have main method
+

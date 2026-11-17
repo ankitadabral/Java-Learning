@@ -1,0 +1,29 @@
+*  The static keyword in Java is used for memory management primarily.
+*  It can be applied to variables, methods, blocks and nested classes.
+*  The main concept behind static is that it belongs to the class rather than instances/objects of the class.
+*  Static methods cannot use non static data members or cannot call non static method directly.
+   To call non static member or method we need to create object of that class and then access them
+*  this and super keyword cannot be used in static context
+        this → refers to the current object
+        super → refers to the current object's parent class
+        But a static member belongs to the class, not to any particular object.
+*  A static variable is initialized before any instance of the class is created.
+        A static variable belongs to the class, not to individual objects. So it is initialized when the class is loaded, before any instance/object of that class is created.
+        Example:
+        class Student {
+            static int count = 10;
+            Student() {
+                System.out.println("Constructor called");
+            }
+        }
+        If you haven't created any object yet:
+        Student.count
+        count is already initialized to 10.
+*  Class loading → static variables initialized → objects can be created
+
+*  STATIC BLOCK - A static block is a block of code that is executed automatically when the class is loaded, before any object of that class is created.
+        Why do we use it?
+        A static block is mainly used to initialize static variables or perform some setup that needs to happen once when the class is loaded.
+*  Static block → automatically executes during class initialization.
+   Static method → executes only when it is called.
+*  And main() itself is a static method, but it is specifically called by the JVM as the program's entry point.

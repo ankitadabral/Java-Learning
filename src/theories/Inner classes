@@ -1,0 +1,50 @@
+*   Inner Class in Java
+             An inner class is a class that is declared inside another class.
+*   Types of inner class:
+             1. Member Inner Class
+             2. Static Nested Class
+             3. Local Inner Class
+             4. Anonymous Inner Class
+
+*   A MEMBER INNER class is a non-static class declared directly inside another class, at the class/member level.
+             If the inner class needs the outer class object's data → use a Member Inner Class.
+             To access a inner class or to create a object of inner member class first we need to create the object of outer class
+             and after the with reference of outer class object we can create object of inner class
+             Can directly access Outer class's instance variables/methods
+             Used when inner object is strongly connected to a specific outer object
+
+*   STATIC INNER class is directly belongs to the outer class rather than its instance/object
+             To access a inner static class we do not need the object of outer class
+             We can directly create the object of inner static class to access it
+             Used when inner class is related to Outer class but doesn't need a specific Outer object
+             Cannot directly access Outer class's instance variables/methods
+             and if static inner class want to access outer class variables/methods can access with the help of outer class object but it is not needed as we can do so with the help of member inner class also
+
+*   ANNONYMOUS INNER CLASS -  An Anonymous Inner Class is a class that is declared and instantiated at the same time, without giving the class a name. It is mainly used when we need a one-time implementation of an interface, abstract class, or an existing concrete class, without creating a separate named class.
+              General Syntax
+              Type reference = new Type() {
+
+                  // fields
+
+                  // methods
+
+              };
+
+              Here:
+
+              Type can be an interface, abstract class, or concrete class.
+              new Type() → creates the anonymous class object. type can be name of that class interface anything
+              { } → contains the implementation/overridden methods.
+              There is no class name, hence "anonymous".
+              The main reason we use it is:
+
+              When we need a small, one-time implementation and don't want to create a separate named class.
+
+*    LOCAL INNER CLASS - Local Inner Class
+
+                         A Local Inner Class is a non-static class declared inside a method, constructor, or block of another class.
+
+                         Because it is declared inside a local scope, it is called a local inner class.
+
+                         READ IT TOMORROE
+

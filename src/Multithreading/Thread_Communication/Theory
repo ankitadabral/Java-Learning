@@ -1,0 +1,18 @@
+                       THREAD COMMUNICATION
+
+*    In a multithreaded environment, threads often need to communicate and coordinate with each other to accomplish a task.
+*    Without proper communication mechanisms, threads might end up in inefficient busy-waiting states, leading to wastage of CPU resources and potential deadlocks.
+*    Methods to use for inter thread communication
+             ~ Wait
+             ~notify
+             ~notifyAll
+*    We can call above 3 methods only inside a synchronized method or synchronized block
+
+*    wait() is a method that makes the current thread enter the waiting state until another thread calls notify() or notifyAll() on the same object. While waiting, the thread releases the lock so that another thread can use that object.
+*    notify() is a method that wakes up one/single thread that is waiting on the same object's monitor. The notified thread does not immediately start executing; it first has to acquire the lock again before continuing its execution.
+*    notifyAll() is a method that wakes up all threads that are waiting on the same object's monitor. All the waiting threads become eligible to continue, but they must compete for the lock, so only one thread can execute the synchronized section at a time.
+
+
+                         THREAD SAFETY
+*    Thread safety means that when multiple threads access or modify the same shared data at the same time, the data remains correct and consistent.
+      Thread safety ensures that multiple threads can work on shared data without causing incorrect results or data corruption or any race condition will not occur

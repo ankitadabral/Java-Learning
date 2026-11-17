@@ -1,0 +1,90 @@
+*   ERRORS : In Java, errors are problems that prevent a program from working correctly. They are mainly divided into 3 types:
+*   1. Compile-Time Error : Occurs during compilation, before the program runs.
+                Example:
+                int a = 10
+                System.out.println(a);
+                ❌ Missing ;
+
+                Other examples: Syntax errors
+                                Wrong data type
+                                Variable not declared
+                                Method not found
+
+*   2. Runtime Error : Occurs while the program is running.
+               Example:
+               int a = 10 / 0;
+               ❌ Causes ArithmeticException
+               Other examples: NullPointerException
+                               ArrayIndexOutOfBoundsException
+                               ClassCastException
+       Runtime errors are generally handled using exception handling (try-catch).
+
+*   3. Logical Error : The program runs successfully, but produces the wrong output.
+              Example:
+              int a = 10;
+              int b = 20;
+              System.out.println(a - b);
+If you intended to calculate the sum, the program runs without any error, but the output is wrong.
+
+*   EXCEPTION : Exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime.
+              Exception occurs → normal flow stops → programs execution stops → if handled, program can continue.
+
+*   EXCEPTION HANDLING : The exception handling is a way to handle the runtime errors so that the normal flow of the application can be maintained.
+
+*   Try-catch prevents an exception from terminating the entire program and allows execution to continue after the catch block.
+
+*   STACK TRACE : A stack trace is a detailed report that tells you where an exception occurred and the sequence of method calls that led to it.
+
+*   CHECKED EXCEPTION : An exception that is checked by the compiler and must be handled or declared using try-catch or throws.
+                         Example: IOException, SQLException
+
+*   UNCHECKED EXCEPTION : An exception that is not checked by the compiler and does not require mandatory handling.
+                          Example: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException
+
+*   THROW : throw is used to explicitly/forcefully throw an exception from a specific point in the code.
+
+*   THROWS : throws is used in a method declaration to declare that the method may throw one or more exceptions.
+
+
+| `throw`                                 | `throws`                                |
+| --------------------------------------- | --------------------------------------- |
+| Used to **actually throw** an exception | Used to **declare** possible exceptions |
+| Used **inside the method/body**         | Used **with method declaration**        |
+| Throws **one exception at a time**      | Can declare **multiple exceptions**     |
+| Example: `throw new IOException();`     | Example: `method() throws IOException`  |
+
+*   throw and throws are used for throwing/declaring exceptions, while try-catch is used to handle exceptions.
+
+*   NOTE : When an exception occurs, the code after the exception within the same try block does not execute; however, if the exception is handled by catch, the program can continue executing after the catch block.
+           Checked = compiler checks it.
+           Unchecked = compiler does not check it.
+
+*   FINALLY : finally is a block used with try-catch that executes after the try/catch block, whether an exception occurs or not.
+
+               Why is it used?
+               It is commonly used for cleanup work, such as closing files, database connections, etc.
+               finally is a block that normally executes regardless of whether an exception occurs or not, and is mainly used for cleanup.
+
+*   finally always comes after try/catch, but before the method actually returns.
+
+
+*    CUSTOMISED EXCEPTION in Java
+
+     A custom exception is an exception that we create ourselves according to our application's requirements.
+
+     For example, Java doesn't have a specific exception called InvalidAgeException, so we can create one:
+
+     class InvalidAgeException extends Exception {
+         public InvalidAgeException(String message) {
+             super(message);
+         }
+     }
+
+     Then use it:
+
+     if (age < 18) {
+         throw new InvalidAgeException("Age must be 18 or above");
+     }
+     Easy definition:
+
+     A custom exception is a user-defined exception created by extending an existing exception class such as Exception or RuntimeException.

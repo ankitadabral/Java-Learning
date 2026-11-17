@@ -1,0 +1,28 @@
+ACCESS MODIFIERS :
+These are the keywords that decides the visisbility of anything is java, ex class, methods, field/variables/members
+1. public - Accessible from anywhere
+2. private - Accessible within the class only(methods, fields/members)
+             Top level class cannot be private it can either be public or default
+             Nested class can be private and its accessible within that class only in which it is written
+             Top-level class = a class that is not inside any other class.
+             Nested class = a class that is inside another class
+
+3. Default - Accessible within the same package only. And no keyword needed
+
+4. Protected - Accessible within the package + Child class in any other package
+
+
+
+
+Note : * Nested class can have all 4access modifiers and nested classes follow the same access rules as class members.
+       * Java constructors can have 4 access levels.
+            ~A private constructor means: you cannot create an object of that class from outside the class.
+            ~ Then why use it?
+              One common use is the Singleton pattern, where you want to make sure that only one object of a class can be created.
+              Another simple use is when you have a class containing only static methods/utility methods and you don't want anyone to create its object.
+
+       * Singleton Pattern = A design pattern that ensures only one object of a class is created and provides a way to access that object.
+       * Singleton Class  = A Singleton Class is a class that allows only one object (instance) of that class to be created throughout the application.
+            ~Singleton Class → The class that allows only one object.
+            ~Singleton Pattern → The design pattern/approach used to achieve that.
+       * Basically, in the Singleton Pattern, a private constructor + static instance + static access method are the core concepts.

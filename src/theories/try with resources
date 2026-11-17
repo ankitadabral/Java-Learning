@@ -1,0 +1,26 @@
+*   Try-with-resources is mainly used to automatically close resources (files, streams, database connections, etc.). It is not specifically an exception-handling mechanism.
+         ~However, exceptions can still occur inside try-with-resources, and you can use catch or throws to handle/propagate them.
+
+*   Try-with-resources ke saath 3 possibilities hain:
+
+    1. Only try-with-resources
+    try (FileReader file = new FileReader("a.txt")) {
+        // code
+    }
+
+
+    2. try-with-resources + catch
+    try (FileReader file = new FileReader("a.txt")) {
+        // code
+    } catch (IOException e) {
+        System.out.println("File error");
+    }
+
+
+
+    3. try-with-resources + finally
+    try (FileReader file = new FileReader("a.txt")) {
+        // code
+    } finally {
+        // code
+    }
