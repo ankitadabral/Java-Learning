@@ -9,7 +9,10 @@ public class HashMap_Demo {
 
         // As hashmap stores value in key value pairs,
         // so we have two give two generics
-        HashMap<Integer, String> map = new HashMap<>();
+        //during hashmap creation we can give initial capacity and load factor as well
+        // and based on this further the threshold will be calculated and rehashing will happen
+
+        HashMap<Integer, String> map = new HashMap<>(17,0.5f);
 
         // We have to use put method to add values in hashmap
         map.put(1, "Santoshi");
