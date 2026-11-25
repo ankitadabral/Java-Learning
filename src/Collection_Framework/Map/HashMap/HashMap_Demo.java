@@ -89,5 +89,6 @@ public class HashMap_Demo {
 
         System.out.println("Printing map after removing 3 and 7 key : " + map);
 
+
     }
 }

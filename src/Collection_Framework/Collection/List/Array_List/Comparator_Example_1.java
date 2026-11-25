@@ -38,7 +38,7 @@ class IntegerComparator implements Comparator<Integer> {
     public int compare(Integer o1, Integer o2) {
         // here we have return o2-o1 because we want to sort the list in descending order
         //ex - 4-3= 1 +ve 4 will come before 3
-        // and 3-4 = -1 -ve 4 will come before 3
+        // and 3-4 = -1 -ve 4 will come after 3
 
         return o2 - o1;// it will sort list in descending order
         // and if we want in ascending order then we should write "return o1-o2"
